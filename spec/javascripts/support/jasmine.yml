@@ -1,0 +1,11 @@
+src_files:
+  - app/assets/javascripts/underscore.js
+  - app/assets/javascripts/underscore.string.js
+  - app/assets/javascripts/underscore.extensions.js
+stylesheets:
+helpers:
+  - support/**/*.js
+spec_files:
+  - '**/*[sS]pec.js'
+src_dir:
+spec_dir: spec/javascripts
