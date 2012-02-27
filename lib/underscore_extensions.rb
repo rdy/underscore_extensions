@@ -1,6 +1,8 @@
 require "underscore_extensions/version"
 
 module UnderscoreExtensions
-  class Railtie < ::Rails::Railtie
+  module Rails
+    class Engine < ::Rails::Engine
+    end
   end
 end
