@@ -1,7 +1,7 @@
 src_files:
   - vendor/assets/javascripts/underscore.js
   - vendor/assets/javascripts/underscore.string.js
-  - vendor/assets/javascripts/underscore.extensions.js
+  - lib/assets/javascripts/underscore.extensions.js
 stylesheets:
 helpers:
   - support/**/*.js
