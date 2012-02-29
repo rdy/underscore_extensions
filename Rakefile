@@ -1,5 +1,6 @@
 ENV['JASMINE_SPEC_FORMAT'] = 'Fuubar'
-ENV['JASMINE_BROWSER'] = 'chrome'
+# Disable chrome for travis ci
+# ENV['JASMINE_BROWSER'] = 'chrome'
 
 require 'bundler/gem_tasks'
 require 'jshint/tasks'
