@@ -1,6 +1,8 @@
 Underscore Extensions
 =====================
 
+[![Build Status](https://secure.travis-ci.org/rdy/underscore_extensions.png)](http://travis-ci.org/rdy/underscore_extensions)
+
 Adds extensions to the underscore javascript library. It adds the javascript as a rails engine to be included in to a Rails 3+ project. To use it make sure require underscore, underscore.string and underscore.extensions.
 
 Installing
