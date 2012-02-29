@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'fuubar'
   s.add_development_dependency 'jasmine'
-  s.add_development_dependency 'jshint'
+  s.add_development_dependency 'jshint_on_rails'
   s.add_development_dependency 'thin'
   s.add_runtime_dependency 'rails', '>= 3.1'
   s.add_runtime_dependency 'rails', '>= 3.1'
