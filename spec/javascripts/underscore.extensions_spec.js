@@ -18,19 +18,55 @@ describe('_', function() {
   });
 
   describe('#namespace', function() {
-    it('should create the namespace', function() {
-      var result = {};
-      baz = _(result).namespace('foo.bar.baz');
-      baz.property = 'property';
-      expect(result.foo.bar.baz).toBeDefined();
-      expect(result.foo.bar.baz.property).toBeDefined();
+    describe('when the namespace is passed as a single parameter with period separator', function() {
+      it('should create the namespace', function() {
+        var result = {};
+        baz = _(result).namespace('foo.bar.baz');
+        baz.property = 'property';
+        expect(result.foo.bar.baz).toBeDefined();
+        expect(result.foo.bar.baz.property).toBeDefined();
+      });
+
+      it('should not overwrite existing namespaces', function() {
+        var result = { foo: {a: 'b'}};
+        baz = _(result).namespace('foo.bar.baz');
+        expect(result.foo.bar.baz).toBeDefined();
+        expect(result.foo.a).toEqual('b');
+      });
     });
 
-    it('should not overwrite existing namespaces', function() {
-      var result = { foo: {a: 'b'}};
-      baz = _(result).namespace('foo.bar.baz');
-      expect(result.foo.bar.baz).toBeDefined();
-      expect(result.foo.a).toEqual('b');
+    describe('when the namespace is passed as multiple parameters', function() {
+      it('should create the namespace', function() {
+        var result = {};
+        baz = _(result).namespace('foo', 'bar', 'baz');
+        baz.property = 'property';
+        expect(result.foo.bar.baz).toBeDefined();
+        expect(result.foo.bar.baz.property).toBeDefined();
+      });
+
+      it('should not overwrite existing namespaces', function() {
+        var result = { foo: {a: 'b'}};
+        baz = _(result).namespace('foo', 'bar', 'baz');
+        expect(result.foo.bar.baz).toBeDefined();
+        expect(result.foo.a).toEqual('b');
+      });
+    });
+
+    describe('when the namespace is passed as an array', function() {
+      it('should create the namespace', function() {
+        var result = {};
+        baz = _(result).namespace(['foo', 'bar', 'baz']);
+        baz.property = 'property';
+        expect(result.foo.bar.baz).toBeDefined();
+        expect(result.foo.bar.baz.property).toBeDefined();
+      });
+
+      it('should not overwrite existing namespaces', function() {
+        var result = { foo: {a: 'b'}};
+        baz = _(result).namespace(['foo', 'bar', 'baz']);
+        expect(result.foo.bar.baz).toBeDefined();
+        expect(result.foo.a).toEqual('b');
+      });
     });
   });
 
