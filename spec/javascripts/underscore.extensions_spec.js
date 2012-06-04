@@ -91,14 +91,24 @@ describe('_', function() {
   });
 
   describe('#pluralize', function() {
-    it('should use a space when includeSpace is passed in the options', function() {
-      expect(_('point').pluralize(2, {includeSpace: true})).toEqual('2 points');
+    it("should pluralize a model name", function() {
+      expect(_('point').pluralize()).toEqual('points');
+      expect(_('story').pluralize()).toEqual('stories');
     });
 
-    it('should return a pluralized string based on the number', function() {
-      expect(_('point').pluralize(0)).toEqual('0points');
-      expect(_('point').pluralize(1)).toEqual('1point');
-      expect(_('point').pluralize(2)).toEqual('2points');
+    it("should pass the skip option", function() {
+      expect(_('foo').pluralize({skip: 'foo'})).toEqual('foo');
+    });
+  });
+
+  describe('#singularize', function() {
+    it("should singularize a model name", function() {
+      expect(_('octopi').singularize()).toEqual('octopus');
+      expect(_('stories').singularize()).toEqual('story');
+    });
+
+    it("should pass the skip option", function() {
+      expect(_('foos').singularize({skip: 'foos'})).toEqual('foos');
     });
   });
 });

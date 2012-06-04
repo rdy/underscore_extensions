@@ -1,6 +1,7 @@
 src_files:
   - vendor/assets/javascripts/underscore.js
   - vendor/assets/javascripts/underscore.string.js
+  - lib/assets/javascripts/inflection.js
   - lib/assets/javascripts/underscore.extensions.js
 stylesheets:
 helpers:
