@@ -5,18 +5,6 @@ describe('_', function() {
     });
   });
 
-  describe('#except', function() {
-    it('should return the object without the keys specified', function() {
-      expect(_({a: 'a', b: 'b', c: 'c'}).except('b', 'c')).toEqual({a: 'a'});
-    });
-
-    describe('when the keys are specified as an array', function() {
-      it('should return the object without the keys specified', function() {
-        expect(_({a: 'a', b: 'b', c: 'c'}).except(['b', 'c'])).toEqual({a: 'a'});
-      });
-    });
-  });
-
   describe('#namespace', function() {
     describe('when the namespace is passed as a single parameter with period separator', function() {
       it('should create the namespace', function() {
@@ -70,26 +58,6 @@ describe('_', function() {
     });
   });
 
-  describe('#only', function() {
-    it('should return an empty object if no keys are specified', function() {
-      expect(_({a: 'a', b: 'b', c: 'c'}).only()).toEqual({});
-    });
-
-    it('should return the object only the keys specified', function() {
-      expect(_({a: 'aa', b: 'bb', c: 'cc'}).only('a', 'c')).toEqual({a: 'aa', c: 'cc'});
-    });
-
-    describe('when the keys are specified as an array', function() {
-      it('should return an empty object if no keys are specified', function() {
-        expect(_({a: 'a', b: 'b', c: 'c'}).only([])).toEqual({});
-      });
-
-      it('should return the object only the keys specified', function() {
-        expect(_({a: 'aa', b: 'bb', c: 'cc'}).only(['a', 'c'])).toEqual({a: 'aa', c: 'cc'});
-      });
-    });
-  });
-
   describe('#pluralize', function() {
     it("should pluralize a model name", function() {
       expect(_('point').pluralize()).toEqual('points');
@@ -122,6 +90,14 @@ describe('_', function() {
 
     it('should pass the skip option', function() {
       expect(_('foos').singularize({skip: 'foos'})).toEqual('foos');
+    });
+  });
+
+  describe("#stableSortBy", function() {
+    it("should sort the items by the provided iterator, through a stable sort", function() {
+      var toSort = [{a: 1}, {b: 1}, {c: 1}, {d: 1}, {e: 2}, {f:1}, {g: 1}];
+      var sorted = _(toSort).stableSortBy(function(obj) { return _(obj).values()[0]; });
+      expect(sorted).toEqual([{a: 1}, {b: 1}, {c: 1}, {d: 1}, {f:1}, {g: 1}, {e: 2}]);
     });
   });
 });
