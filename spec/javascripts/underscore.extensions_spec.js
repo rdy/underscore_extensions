@@ -1,10 +1,4 @@
 describe('_', function() {
-  describe('#classify', function() {
-    it('should return a string camelized with capital letters', function() {
-      expect(_('the_quick_brown_fox').classify()).toEqual('TheQuickBrownFox');
-    });
-  });
-
   describe('#namespace', function() {
     describe('when the namespace is passed as a single parameter with period separator', function() {
       it('should create the namespace', function() {
