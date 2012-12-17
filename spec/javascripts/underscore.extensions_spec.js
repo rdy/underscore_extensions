@@ -92,12 +92,4 @@ describe('_', function() {
       expect(_('foos').singularize({skip: 'foos'})).toEqual('foos');
     });
   });
-
-  describe("#stableSortBy", function() {
-    it("should sort the items by the provided iterator, through a stable sort", function() {
-      var toSort = [{a: 1}, {b: 1}, {c: 1}, {d: 1}, {e: 2}, {f:1}, {g: 1}];
-      var sorted = _(toSort).stableSortBy(function(obj) { return _(obj).values()[0]; });
-      expect(sorted).toEqual([{a: 1}, {b: 1}, {c: 1}, {d: 1}, {f:1}, {g: 1}, {e: 2}]);
-    });
-  });
 });
