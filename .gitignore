@@ -1,6 +1,5 @@
 *.gem
 .bundle
-./idea/*
+.idea/*
 Gemfile.lock
-./chromedriver.log
 pkg/*
