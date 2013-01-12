@@ -3,7 +3,7 @@ ENV['JASMINE_SPEC_FORMAT'] = 'Fuubar'
 # ENV['JASMINE_BROWSER'] = 'chrome'
 
 require 'bundler/gem_tasks'
-require 'jshint/tasks'
+require 'jslint/tasks'
 
 begin
   require 'jasmine'
@@ -14,6 +14,6 @@ rescue LoadError
   end
 end
 
-JSHint.config_path = 'config/jshint.yml'
+JSLint.config_path = 'config/jshint.yml'
 
-task :default => [:jshint, :'jasmine:ci']
+task :default => [:jslint, :'jasmine:ci']
