@@ -14,6 +14,6 @@ rescue LoadError
   end
 end
 
-JSLint.config_path = 'config/jshint.yml'
+JSLint.config_path = 'config/jslint.yml'
 
 task :default => [:jslint, :'jasmine:ci']
