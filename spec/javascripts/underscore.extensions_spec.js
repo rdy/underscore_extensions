@@ -52,6 +52,22 @@ describe('_', function() {
     });
   });
 
+  describe('#has', function() {
+    it('should check each property on the object', function() {
+      var obj = {foo: {bar: {baz: true}}};
+      expect(_(obj).has('foo', 'fizz')).toBe(false);
+      expect(_(obj).has('foo', 'bar', 'baz')).toBe(true);
+      expect(_(obj).has('foo', 'bar', 'baz', 'buzz')).toBe(false);
+    });
+
+    it('should check array arguments on the object', function() {
+      var obj = {foo: {bar: {baz: true}}};
+      expect(_(obj).has(['foo', 'fizz'])).toBe(false);
+      expect(_(obj).has(['foo', 'bar', 'baz'])).toBe(true);
+      expect(_(obj).has(['foo', 'bar', 'baz', 'buzz'])).toBe(false);
+    });
+  });
+
   describe('#pluralize', function() {
     it("should pluralize a model name", function() {
       expect(_('point').pluralize()).toEqual('points');
