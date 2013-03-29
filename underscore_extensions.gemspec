@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency 'fuubar'
-  s.add_development_dependency 'jasmine', ">= 1.2.1"
-  s.add_development_dependency 'jslint_on_rails'
+  s.add_development_dependency 'jasmine', '>= 1.3.2'
+  s.add_development_dependency 'jshint_on_rails'
   s.add_development_dependency 'thin'
   s.add_runtime_dependency 'rails', '>= 3.1'
 end
