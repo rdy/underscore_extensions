@@ -10,7 +10,9 @@ paths:
   - lib/assets/javascripts/**/*.js
 
 exclude_paths:
-
+  - lib/assets/javascripts/inflection.js
+  - lib/assets/javascripts/underscore.js
+  - lib/assets/javascripts/underscore.string.js
 
 # ------------ jslint options ------------
 # see http://www.jslint.com/lint.html#options for more detailed explanations

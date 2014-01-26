@@ -1,7 +1,3 @@
-ENV['JASMINE_SPEC_FORMAT'] = 'Fuubar'
-# Disable chrome for travis ci
-# ENV['JASMINE_BROWSER'] = 'chrome'
-
 require 'bundler/gem_tasks'
 require 'jshint/tasks'
 
@@ -16,4 +12,4 @@ end
 
 JSHint.config_path = 'config/jshint.yml'
 
-task :default => [:jshint, :'jasmine:ci']
+task default: %i[jshint jasmine:ci]
