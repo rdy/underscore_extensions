@@ -12,4 +12,4 @@ end
 
 JSHint.config_path = 'config/jshint.yml'
 
-task default: %i[jshint jasmine:ci]
+task :default => [:jshint, :'jasmine:ci']
